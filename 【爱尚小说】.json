@@ -1,0 +1,48 @@
+{
+    "bookSourceUrl": "https://www.asxs.com/",
+    "bookSourceType": "0",
+    "bookSourceName": "【爱尚小说】",
+    "bookSourceGroup": "Li ™",
+    "bookSourceComment": "",
+    "loginUrl": "",
+    "loginUi": "",
+    "loginCheckJs": "",
+    "concurrentRate": "",
+    "header": "",
+    "bookUrlPattern": "",
+    "searchUrl": "/search.php,{\n\"method\": \"POST\",\n\"body\": \"keyword={{key}}\"\n}",
+    "exploreUrl": "",
+    "enabled": true,
+    "enabledExplore": false,
+    "weight": 0,
+    "customOrder": -230876,
+    "lastUpdateTime": 1655117758761,
+    "ruleSearch": {
+        "bookList": "class.bdsub@tag.tbody@tag.tr!0",
+        "name": "tag.tr@tag.a.0@text",
+        "author": "tag.td.3@text",
+        "kind": "tag.td.0@text",
+        "wordCount": "tag.td.5@text",
+        "lastChapter": "tag.tr@tag.a.1@text&&tag.td.4@text",
+        "bookUrl": "tag.tr@tag.a.0@href"
+    },
+    "ruleExplore": {},
+    "ruleBookInfo": {
+        "name": "class.btitle@tag.h1@text",
+        "author": "tag.i.0@text",
+        "kind": "tag.i.2@text##类别：",
+        "wordCount": "tag.i.1@text##作品进度：",
+        "lastChapter": "class.fl@text##最新章节：",
+        "intro": "class.intro@text##小说介绍：",
+        "coverUrl": "class.pic@tag.img@src"
+    },
+    "ruleToc": {
+        "chapterList": "id.at@tag.a",
+        "chapterName": "tag.a@text",
+        "chapterUrl": "tag.a@href"
+    },
+    "ruleContent": {
+        "content": "#contents@tag.p@textNodes",
+        "replaceRegex": "##7017k|谷\\s.*|asxs"
+    }
+}
