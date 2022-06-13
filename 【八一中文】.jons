@@ -1,0 +1,44 @@
+{
+    "bookSourceUrl": "https://api.81zwapp.com",
+    "bookSourceType": "0",
+    "bookSourceName": "【八一中文】",
+    "bookSourceGroup": "Li ™",
+    "bookSourceComment": "",
+    "loginUrl": "",
+    "loginUi": "",
+    "loginCheckJs": "",
+    "concurrentRate": "",
+    "header": "",
+    "bookUrlPattern": "",
+    "searchUrl": "https://api.81zwapp.com/api/v1/novelsearch?content={{key}}&pageIndex={{page}}&pageSize=20&type=2",
+    "exploreUrl": "",
+    "enabled": true,
+    "enabledExplore": false,
+    "weight": 0,
+    "customOrder": -230878,
+    "lastUpdateTime": 1655117578068,
+    "ruleSearch": {
+        "bookList": "$.data.list||$.data[*]",
+        "name": "$.name@put:{name:$.name}",
+        "author": "$.author@put:{author:$.author}",
+        "kind": "$.categoryName&&$.bookStatus",
+        "wordCount": "$.wordNum",
+        "lastChapter": "$.chapterName@put:{update:$.chapterName}&&chapterUpdateTime##T.*",
+        "intro": "$.intro",
+        "coverUrl": "$.picture",
+        "bookUrl": "<js>\nvar bid=parseInt(java.getString('$.bookId'));\nif(!bid>0){\nbid=parseInt(java.getString('$.id'));\n}\njava.put(\"bid\",bid);\nvar subpath=parseInt((1999+bid)/2000);\nvar url=\"http://statics.rungean.com/static/book/zip/\"+subpath+\"/\"+bid+\".zip\";\nresult=url;</js>"
+    },
+    "ruleExplore": {},
+    "ruleBookInfo": {
+        "name": "@get:{name}",
+        "author": "@get:{author}"
+    },
+    "ruleToc": {
+        "chapterList": "<js>\n//java.log(\"SSSS\"+baseUrl)\nresult=java.getZipStringContent(baseUrl,\"chapter.json\")\n//java.log(result);\n</js>$.data[*]",
+        "chapterName": "$.name",
+        "chapterUrl": "$.content_url"
+    },
+    "ruleContent": {
+        "content": "all"
+    }
+}
